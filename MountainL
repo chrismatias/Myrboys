@@ -1,0 +1,208 @@
+let colors = [ "green", "orange" , "darkgreen", "#FFC300" ,"#CC6600", "green"];
+
+
+
+
+for(let i = 0; i < 400; i+=1)
+{
+    resetCursor();
+    
+    let xPos = (Math.random() * 40);
+    let zPos = (Math.random() * 40);
+    
+  
+    tree(xPos, zPos);
+
+}
+
+for(let i = 0; i < 400; i+=1)
+{
+    resetCursor();
+    
+    let xPos = (Math.random() - 0.5) * 80;
+    let zPos = (Math.random() - 1) * 40;
+    
+  
+    tree(xPos, zPos);
+
+}
+
+function tree (x, z){
+    setXPos(x);
+    setZPos(z);
+    
+    setColor("chocolate");
+    setScale(0.25,3,.25);
+    cylinder();
+    
+    getRandomColor(colors);
+    setScale(1,1,1);
+    setYPos(2);
+    sphere();
+
+    resetCursor();
+}
+
+
+
+
+
+
+for(let i = 0; i < 25; i+=1){
+    for(let j = 0; j < 25; j++){
+    resetCursor();
+    
+    let xPos = (Math.random() - 0.5) * 80;
+    let zPos = (Math.random() - 0.5) * 80;
+    
+  
+    cloud(xPos, zPos);
+
+    }
+
+}
+
+function cloud (x, z){
+    setXPos(x);
+    setZPos(z);
+    
+    
+    setColor("white");
+    setScale(1,1,2.5);
+    setYPos(30);
+    goRight(sphere());
+    setLoop(true);
+    setMagnitude(100000000 * Math.random() * 100000);
+    
+    
+    
+}
+    
+    
+    setColor("yellow");
+    setScale(20,20,20);
+    setYPos(300);
+    setXPos(-100);
+    sphere();
+    resetCursor();
+    
+    setColor("gray");
+    setPosition(1,1,1);
+    setScale(15,25,9);
+    prism();
+    resetCursor();
+    
+    setColor("snow");
+    setPosition(5,5,5);
+    setScale(15,30,9);
+    prism();
+    resetCursor();
+    
+    setColor("gray");
+    setPosition(5,5,5);
+    setScale(15,30,9);
+    prism();
+    
+    setColor("gray");
+    setPosition(-9,1,1);
+    setScale(7,15,9);
+    prism();
+    resetCursor();
+
+    setColor("gray");
+    setPosition(-9,-9,1);
+    setScale(7,15,9);
+    prism();
+    resetCursor();
+    
+    setColor("gray");
+    setPosition(9,2,9);
+    setScale(15,15,20);
+    prism();
+    resetCursor();
+
+    setColor("gray");
+    setPosition(-9,-9,1);
+    setScale(7,15,9);
+    sphere();
+    resetCursor();
+    
+    
+
+    
+for(let i = 0; i < 7; i+=1){
+    for(let j = 0; j < 7; j++)
+    resetCursor();
+    
+    let xPos = (Math.random() - 1.2 ) * 33;
+    let zPos = (Math.random() ) * 30;
+    
+  
+    houses(xPos, zPos);
+    
+    // let house = houses();
+    // house.setPosition(xPos,2,zPos)
+
+}
+
+function houses (x, z){
+    let house = group();
+    house.setPosition(x,0,z)
+
+    
+  //home
+
+    setScale(7,10,7);
+    setColor("#D39028");
+    house.add(box())
+//roof
+    
+    setScale(5,5,5);
+    getRandomColor();
+    setPosition(0,5,0);
+    yawY(45);
+    house.add(octahedron());
+    resetCursor()
+
+//door
+    setColor("burlywood");
+    setScale(1.5, 2.8, 0.1);
+    setPosition(0, 0, -3.5);
+    house.add(box());
+    resetCursor()
+    
+    setColor("gold");
+    setScale(0.1, 0.1, 0.1);
+    setPosition(0.5, 0, -3.5);
+    house.add(sphere());
+    resetCursor();
+    
+    setXPos(2);
+    setYPos(2);
+    setZPos(-3.6);
+    setScale(1.5,1.5,1);
+    setColor("skyblue");
+    house.add(plane());
+    
+
+    setXPos(-2);
+    setYPos(2);
+    setZPos(-3.6);
+    setScale(1.5,1.5,1);
+    setColor("skyblue");
+    house.add(plane());
+    
+    setXPos(2)
+    setYPos(3)
+    setZPos(-3.6)
+    setScale(1.5,1.5,1)
+    setColor("skyblue")
+    house.add(plane());
+    
+    setXPos(-2)
+    setYPos(3)
+    setZPos(-3.6)
+    setScale(1.5,1.5,1)
+    setColor("skyblue")
+    house.add(plane());
+}
