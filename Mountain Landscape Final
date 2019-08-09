@@ -1,0 +1,511 @@
+let colors = ["green", "orange", "darkgreen", "#FFC300", "#CC6600", "green"];
+
+setColor("green")
+setScale(320, 0, 320)
+box()
+
+
+
+for (let i = 0; i < 400; i += 1) {
+    resetCursor();
+
+    let xPos = (Math.random() * 140);
+    let zPos = (Math.random() * 140);
+
+
+    tree(xPos, zPos);
+
+}
+
+for (let i = 0; i < 750; i += 1) {
+    resetCursor();
+
+    let xPos = (Math.random() - 0.5) * 320;
+    let zPos = (Math.random() - 1) * 160;
+
+
+    tree(xPos, zPos);
+
+}
+
+function tree(x, z) {
+    setXPos(x);
+    setZPos(z);
+
+    setColor("chocolate");
+    setScale(0.25, 3, .25);
+    cylinder();
+
+    getRandomColor(colors);
+    setScale(1, 1, 1);
+    setYPos(2);
+    sphere();
+
+    resetCursor();
+}
+
+
+
+
+for (let i = 0; i < 20; i += 1) {
+    for (let j = 0; j < 20; j++) {
+        resetCursor();
+
+        let xPos = (Math.random() - 0.5) * 400;
+        let zPos = (Math.random() - 0.5) * 400;
+
+
+        cloud(xPos, zPos);
+
+    }
+
+}
+
+function cloud(x, z) {
+    setXPos(x);
+    setZPos(z);
+
+
+    setColor("white");
+    setScale(Math.random() + 5 * 2, 5, 10);
+    setYPos(35);
+    goRight(sphere());
+    setLoop(true);
+
+
+
+
+}
+
+
+setColor("yellow");
+setScale(20, 20, 20);
+setYPos(300);
+setXPos(-100);
+sphere();
+resetCursor();
+
+setColor("gray");
+setPosition(1, 1, 1);
+setScale(15, 25, 9);
+prism();
+resetCursor();
+
+setColor("snow");
+setPosition(5, 5, 5);
+setScale(15, 30, 9);
+prism();
+resetCursor();
+
+setColor("gray");
+setPosition(5, 5, 5);
+setScale(15, 30, 9);
+prism();
+
+setColor("gray");
+setPosition(-9, 1, 1);
+setScale(7, 15, 9);
+prism();
+resetCursor();
+
+setColor("gray");
+setPosition(-9, -9, 1);
+setScale(7, 15, 9);
+prism();
+resetCursor();
+
+setColor("gray");
+setPosition(9, 2, 9);
+setScale(15, 15, 20);
+prism();
+resetCursor();
+
+setColor("gray");
+setPosition(-9, -9, 1);
+setScale(7, 15, 9);
+sphere();
+resetCursor();
+
+
+
+
+for (let i = 0; i < 25; i += 1) {
+    for (let j = 0; j < 25; j++)
+        resetCursor();
+
+    let xPos = (Math.random() - 1.2) * 120;
+    let zPos = (Math.random()) * 120;
+
+
+    houses(xPos, zPos);
+
+    // let house = houses();
+    // house.setPosition(xPos,2,zPos)
+
+}
+
+function houses(x, z) {
+    let house = group();
+    house.setPosition(x, 1, z)
+
+
+    //home
+
+    setScale(7, 10, 7);
+    setColor("#D39028");
+    house.add(box())
+        //roof
+
+    setScale(5, 5, 5);
+    getRandomColor();
+    setPosition(0, 5, 0);
+    yawY(45);
+    house.add(octahedron());
+    resetCursor()
+
+    //door
+    setColor("burlywood");
+    setScale(1.5, 2.8, 0.1);
+    setPosition(0, 0, -3.5);
+    house.add(box());
+    resetCursor()
+
+    setColor("gold");
+    setScale(0.1, 0.1, 0.1);
+    setPosition(0.5, 0, -3.5);
+    house.add(sphere());
+    resetCursor();
+
+    setXPos(2);
+    setYPos(2);
+    setZPos(-3.6);
+    setScale(1.5, 1.5, 1);
+    setColor("skyblue");
+    house.add(plane());
+
+
+    setXPos(-2);
+    setYPos(2);
+    setZPos(-3.6);
+    setScale(1.5, 1.5, 1);
+    setColor("skyblue");
+    house.add(plane());
+
+    setXPos(2)
+    setYPos(3)
+    setZPos(-3.6)
+    setScale(1.5, 1.5, 1)
+    setColor("skyblue")
+    house.add(plane());
+
+    setXPos(-2)
+    setYPos(3)
+    setZPos(-3.6)
+    setScale(1.5, 1.5, 1)
+    setColor("skyblue")
+    house.add(plane());
+}
+
+for (let i = 0; i < 7; i += 1) {
+    for (let j = 0; j < 7; j++)
+        resetCursor();
+
+    let xPos = (Math.random() - 1.2) * 120;
+    let zPos = (Math.random()) * 120;
+
+
+    bighouses(xPos, zPos);
+
+    // let house = houses();
+    // house.setPosition(xPos,2,zPos)
+
+}
+
+function bighouses(x, z) {
+
+
+
+    let bighouses = group();
+    bighouses.setPosition(x, 1, z)
+
+
+
+    //home
+
+
+    setScale(7, 20, 7);
+    setColor("#D39028");
+    bighouses.add(box())
+        //roof
+
+    setScale(5, 5, 5);
+    getRandomColor();
+    setPosition(0, 10, 0);
+    yawY(45);
+    bighouses.add(octahedron());
+    resetCursor()
+
+    //door
+    setColor("burlywood");
+    setScale(1.5, 2.8, 0.1);
+    setPosition(0, 0, -3.5);
+    bighouses.add(box());
+    resetCursor()
+
+    setColor("gold");
+    setScale(0.1, 0.1, 0.1);
+    setPosition(0.5, 0, -3.5);
+    bighouses.add(sphere());
+    resetCursor();
+
+    setXPos(2);
+    setYPos(2);
+    setZPos(-3.6);
+    setScale(1.5, 1.5, 1);
+    setColor("skyblue");
+    bighouses.add(plane());
+
+    //window
+    setXPos(-2);
+    setYPos(7);
+    setZPos(-3.6);
+    setScale(1.5, 1.5, 1);
+    setColor("skyblue");
+    bighouses.add(plane());
+
+    setXPos(2)
+    setYPos(7)
+    setZPos(-3.6)
+    setScale(1.5, 1.5, 1)
+    setColor("skyblue")
+    bighouses.add(plane());
+
+    setXPos(-2)
+    setYPos(6)
+    setZPos(-3.6)
+    setScale(1.5, 1.5, 1)
+    setColor("skyblue")
+    bighouses.add(plane());
+
+    setXPos(2);
+    setYPos(6);
+    setZPos(-3.6);
+    setScale(1.5, 1.5, 1);
+    setColor("skyblue");
+    bighouses.add(plane());
+
+
+    setXPos(-2);
+    setYPos(2);
+    setZPos(-3.6);
+    setScale(1.5, 1.5, 1);
+    setColor("skyblue");
+    bighouses.add(plane());
+
+    setXPos(2)
+    setYPos(3)
+    setZPos(-3.6)
+    setScale(1.5, 1.5, 1)
+    setColor("skyblue")
+    bighouses.add(plane());
+
+    setXPos(-2)
+    setYPos(3)
+    setZPos(-3.6)
+    setScale(1.5, 1.5, 1)
+    setColor("skyblue")
+
+
+
+
+    bighouses.add(plane());
+}
+
+for (let i = 0; i < 400; i += 1) {
+    resetCursor();
+
+    let xPos = (Math.random() * 140);
+    let zPos = (Math.random() * 140);
+
+
+    bush(xPos, zPos);
+
+}
+
+for (let i = 0; i < 750; i += 1) {
+    resetCursor();
+
+    let xPos = (Math.random() - 0.5) * 320;
+    let zPos = (Math.random() - 1) * 160;
+
+
+    bush(xPos, zPos);
+
+}
+
+function bush(x, z) {
+    setXPos(x);
+    setZPos(z);
+
+    setColor("darkgreen");
+    setScale(.7, .5, .4);
+    setYPos(.7)
+    sphere();
+
+    resetCursor();
+}
+
+setColor("deepskyblue")
+setScale(320, 320, 320)
+sphere()
+
+let hill = group()
+hill.setPosition(1, 1, 1)
+
+setColor("green")
+setScale(20, 15, 10)
+setYPos(-5)
+sphere()
+
+setColor("darkgreen")
+setScale(30, 10, 10)
+setYPos(-5)
+sphere()
+
+setColor("darkgreen")
+setScale(20, 10, 20)
+setYPos(-5)
+sphere()
+resetCursor()
+
+setColor("chocolate");
+setScale(0.25, 3, .25);
+setYPos(11);
+cylinder();
+
+setColor("green")
+setScale(1, 1, 1);
+setYPos(13);
+sphere();
+
+resetCursor();
+
+setColor("chocolate");
+setScale(0.25, 3, .25);
+setPosition(-14, 2, 6)
+cylinder();
+
+setColor("green")
+setScale(1, 1, 1);
+setPosition(-14, 4, 6)
+sphere();
+
+resetCursor();
+
+setColor("chocolate");
+setScale(0.25, 3, .25);
+setPosition(-10, 7.8, 4)
+cylinder();
+
+setColor("green")
+setScale(1, 1, 1);
+setPosition(-10, 9, 4)
+sphere();
+
+resetCursor();
+
+setColor("chocolate");
+setScale(0.25, 3, .25);
+setPosition(-10, 2.5, 11)
+cylinder();
+
+setColor("green")
+setScale(1, 1, 1);
+setPosition(-10, 4, 11)
+sphere();
+
+resetCursor()
+
+
+setColor("chocolate");
+setScale(0.25, 3, .25);
+setPosition(14, 2, 6)
+cylinder();
+
+setColor("green")
+setScale(1, 1, 1);
+setPosition(14, 4, 6)
+sphere();
+
+resetCursor();
+
+setColor("chocolate");
+setScale(0.25, 3, .25);
+setPosition(10, 7.8, 4)
+cylinder();
+
+setColor("green")
+setScale(1, 1, 1);
+setPosition(10, 9, 4)
+sphere();
+
+resetCursor();
+
+setColor("chocolate");
+setScale(0.25, 3, .25);
+setPosition(10, 2.5, 11)
+cylinder();
+
+setColor("green")
+setScale(1, 1, 1);
+setPosition(10, 4, 11)
+sphere();
+
+resetCursor();
+
+setColor("chocolate");
+setScale(0.25, 3, .25);
+setPosition(0, 4, 11)
+cylinder();
+
+setColor("green")
+setScale(1, 1, 1);
+setPosition(0, 5.5, 11)
+sphere();
+
+///// opposite side
+resetCursor();
+
+setColor("chocolate");
+setScale(0.25, 3, .25);
+setPosition(10, 7.8, -4)
+cylinder();
+
+setColor("green")
+setScale(1, 1, 1);
+setPosition(10, 9, -4)
+sphere();
+
+resetCursor();
+
+setColor("chocolate");
+setScale(0.25, 3, .25);
+setPosition(10, 2.5, -11)
+cylinder();
+
+setColor("green")
+setScale(1, 1, 1);
+setPosition(10, 4, -11)
+sphere();
+
+resetCursor();
+
+setColor("chocolate");
+setScale(0.25, 3, .25);
+setPosition(0, 4, -11)
+cylinder();
+
+setColor("green")
+setScale(1, 1, 1);
+setPosition(0, 5.5, -11)
+sphere();
